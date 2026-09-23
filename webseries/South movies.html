@@ -4,88 +4,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Movies</title>
+    <title>South Movies - CineVerse</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121826;
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            text-decoration: none;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            padding: 15px 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links {
+            text-decoration: none;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .nav-links a {
+            color: #f2f4f6;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f30000;
+            text-decoration: none;
+        }
+
+        /* Section Title Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+            color: #ef4444;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Movies Responsive Grid */
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Movie Card Container */
+        .movie-card {
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            border-color: #475569;
+        }
+
+        /* Poster Image Container */
+        .poster-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            overflow: hidden;
+            background-color: #0f172a;
+        }
+
+        .poster-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card:hover .poster-wrapper img {
+            transform: scale(1.05);
+        }
+
+        /* Movie Details List */
+        .movie-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .movie-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .movie-info li {
+            margin-bottom: 6px;
+            color: #cbd5e0;
+        }
+
+        .movie-info li strong {
+            color: #ffffff;
+        }
+
+        .movie-title-item {
+            font-size: 15px;
+            margin-bottom: 8px !important;
+            line-height: 1.3 !important;
+        }
+
+        .movie-title-item strong {
+            color: #38bdf8 !important;
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #2d3748;
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 13px;
+        }
+
+        footer h2 {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        footer p {
+            margin-bottom: 6px;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #1e293b;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #6366f1;
+            border-color: #6366f1;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
-
-<style>
-    body {
-        background-color: #0b0b0b;
-        color: #ffffff;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-    }
-
-    footer {
-        margin-top: auto;
-        padding-top: 40px;
-        text-align: center;
-        color: #a0aec0;
-        font-size: 13px;
-    }
-
-    footer h2 {
-        font-size: 16px;
-        color: #ffffff;
-        margin-bottom: 6px;
-    }
-
-    footer p {
-        margin-bottom: 4px;
-    }
-
-    .submit-btn {
-        width: 100%;
-        padding: 12px;
-        background-color: #0b0b0b;
-        color: #ffffff;
-        font-size: 16px;
-        font-weight: bold;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        margin-top: 10px;
-        transition: background-color 0.2s ease;
-    }
-
-    
-    /* Navigation Bar Styles */
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #121826;
-        padding: 15px 30px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
-
-    .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav-links a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        transition: color 0.2s ease;
-    }
-
-    table ul {
-        list-style-type: none;
-        padding-left: 0;
-        margin-top: 10px;
-        font-size: 14px;
-    }
-
-    table ul li {
-        margin-bottom: 5px;
-    }
-</style>
 
 <body>
 
@@ -98,159 +217,197 @@
         </ul>
     </nav>
 
-    <legend style="text-align: center; color: rgb(228, 30, 30);" aria-setsize="50">
-        <h2> 🎥 SOUTH MOVIES </h2>
-    </legend>
-    <table border="3" height="400px" width="900px" cellpadding="20" align="center" cellspacing="10">
+    <!-- Page Title Header -->
+    <header class="page-header">
+        <h1>🎥 SOUTH MOVIES</h1>
+    </header>
 
-        <!-- First row -->
-        <tr>
-            <!-- 01 -->
-            <td>
-                <a href="./HIT_The First Case.html" target="_blank"><img
-                        src="https://image.tmdb.org/t/p/w500/jyBIXj981Holr260WkrPqL601gm.jpg"
-                        alt="HIT: The First Case Poster" height="300px" width="200px"></a>
+    <!-- Main Movie Cards Grid -->
+    <main class="movies-grid">
+
+        <!-- Movie Card 01 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./HIT_The First Case.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w500/jyBIXj981Holr260WkrPqL601gm.jpg" alt="HIT: The First Case Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> HIT: The First Case</li>
-                    <li><b>Genre : </b> Crime, Mystery, Thriller</li>
-                    <li><b>Rating : </b> ⭐7.6/10</li>
-                    <li><b>Director : </b> Sailesh Kolanu</li>
-                    <li><b>Duration : </b>2h 06m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> HIT: The First Case</li>
+                    <li><strong>Genre:</strong> Crime, Mystery, Thriller</li>
+                    <li><strong>Rating:</strong> ⭐ 7.6/10</li>
+                    <li><strong>Director:</strong> Sailesh Kolanu</li>
+                    <li><strong>Duration:</strong> 2h 06m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-            <!-- 02 -->
-            <td>
-                <a href="./HIT_The 2nd Case.html" target="_blank"><img
-                        src="https://catimages.co/images/2023/07/09/Hit-The-2nd-Case-2022-Hindi-Dubbed-HDRip-Full-Movie-HDHub4u.jpg"
-                        alt="HIT: The 2nd Case Poster" height="300px" width="200px"></a>
+        <!-- Movie Card 02 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./HIT_The 2nd Case.html" target="_blank">
+                    <img src="https://catimages.co/images/2023/07/09/Hit-The-2nd-Case-2022-Hindi-Dubbed-HDRip-Full-Movie-HDHub4u.jpg" alt="HIT: The 2nd Case Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> HIT: The 2nd Case</li>
-                    <li><b>Genre : </b> Action, Crime, Thriller</li>
-                    <li><b>Rating : </b> ⭐7.2/10</li>
-                    <li><b>Director : </b> Sailesh Kolanu</li>
-                    <li><b>Duration : </b>2h 30m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> HIT: The 2nd Case</li>
+                    <li><strong>Genre:</strong> Action, Crime, Thriller</li>
+                    <li><strong>Rating:</strong> ⭐ 7.2/10</li>
+                    <li><strong>Director:</strong> Sailesh Kolanu</li>
+                    <li><strong>Duration:</strong> 2h 30m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-            <!-- 03 -->
-            <td>
-                <a href="./HIT_The Third Case.html" target="_blank"><img
-                        src="https://image.tmdb.org/t/p/w500/wT9tGyFol4RBwkjESXUWeBdnLJn.jpg"
-                        alt="HIT: The Third Case Poster" height="300px" width="200px"></a>
+        <!-- Movie Card 03 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./HIT_The Third Case.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w500/wT9tGyFol4RBwkjESXUWeBdnLJn.jpg" alt="HIT: The Third Case Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> HIT: The Third Case</li>
-                    <li><b>Genre : </b> Action, Thriller</li>
-                    <li><b>Rating : </b> ⭐6.9/10</li>
-                    <li><b>Director : </b> Sailesh Kolanu</li>
-                    <li><b>Duration : </b>2h 37m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> HIT: The Third Case</li>
+                    <li><strong>Genre:</strong> Action, Thriller</li>
+                    <li><strong>Rating:</strong> ⭐ 6.9/10</li>
+                    <li><strong>Director:</strong> Sailesh Kolanu</li>
+                    <li><strong>Duration:</strong> 2h 37m</li>
                 </ul>
-            </td>
-            <!-- 04 -->
-            <td>
-                <a href="./Pushpa_The Rise.html" target="_blank"><img
-                        src="https://image.tmdb.org/t/p/w500/sLxYuCCnWW845rXni9he26gUZM9.jpg"
-                        alt="Pushpa: The Rise Poster" height="300px" width="200px"></a>
+            </div>
+        </div>
+
+        <!-- Movie Card 04 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./Pushpa_The Rise.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w500/sLxYuCCnWW845rXni9he26gUZM9.jpg" alt="Pushpa: The Rise Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> Pushpa: The Rise</li>
-                    <li><b>Genre : </b> Action, Crime, Drama</li>
-                    <li><b>Rating : </b> ⭐7.6/10</li>
-                    <li><b>Director : </b> Sukumar</li>
-                    <li><b>Duration : </b>2h 59m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> Pushpa: The Rise</li>
+                    <li><strong>Genre:</strong> Action, Crime, Drama</li>
+                    <li><strong>Rating:</strong> ⭐ 7.6/10</li>
+                    <li><strong>Director:</strong> Sukumar</li>
+                    <li><strong>Duration:</strong> 2h 59m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-
-            <!-- 05 -->
-            <td>
-                <a href="Pushpa 2_The Rule" target="_blank"><img
-                        src="https://image.tmdb.org/t/p/w500/iwPJwH7BeNBrY5lwaY6aBhR4ekh.jpg"
-                        alt="Pushpa 2: The Rule Poster" height="300px" width="200px"></a>
+        <!-- Movie Card 05 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./Pushpa 2_The Rule.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w500/iwPJwH7BeNBrY5lwaY6aBhR4ekh.jpg" alt="Pushpa 2: The Rule Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> Pushpa 2: The Rule</li>
-                    <li><b>Genre : </b> Action, Crime, Drama</li>
-                    <li><b>Rating : </b> ⭐7.4/10</li>
-                    <li><b>Director : </b> Sukumar</li>
-                    <li><b>Duration : </b>3h 20m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> Pushpa 2: The Rule</li>
+                    <li><strong>Genre:</strong> Action, Crime, Drama</li>
+                    <li><strong>Rating:</strong> ⭐ 7.4/10</li>
+                    <li><strong>Director:</strong> Sukumar</li>
+                    <li><strong>Duration:</strong> 3h 20m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-            <!-- Second row -->
-        <tr>
-            <!-- 06 -->
-            <td>
-                <a href="./Mario.html" target="_blank"><img
-                        src="https://image.tmdb.org/t/p/w400/7WcXyjz00rUIEWIvExwArDZuCoN.jpg" alt="Mario Poster"
-                        height="300px" width="200px"></a>
+        <!-- Movie Card 06 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./Mario.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w400/7WcXyjz00rUIEWIvExwArDZuCoN.jpg" alt="Mario Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> Mario</li>
-                    <li><b>Genre : </b> Crime, Comedy, Thriller</li>
-                    <li><b>Rating : </b> ⭐6.8/10</li>
-                    <li><b>Director : </b> Kalyanji Gogana</li>
-                    <li><b>Duration : </b>2h 15m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> Mario</li>
+                    <li><strong>Genre:</strong> Crime, Comedy, Thriller</li>
+                    <li><strong>Rating:</strong> ⭐ 6.8/10</li>
+                    <li><strong>Director:</strong> Kalyanji Gogana</li>
+                    <li><strong>Duration:</strong> 2h 15m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-            <!-- 07 -->
-            <td>
-                <a href="./Mollywood Times.html" target="_blank"><img
-                        src="https://image.tmdb.org/t/p/w500/3czah0BGOAiepYUX7ad5jDN0Kdp.jpg"
-                        alt="Mollywood Times Poster" height="300px" width="200px"></a>
+        <!-- Movie Card 07 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./Mollywood Times.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w500/3czah0BGOAiepYUX7ad5jDN0Kdp.jpg" alt="Mollywood Times Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> Mollywood Times</li>
-                    <li><b>Genre : </b> Dark Comedy, Drama</li>
-                    <li><b>Rating : </b> ⭐7.1/10</li>
-                    <li><b>Director : </b> Abhinav Sunder Nayak</li>
-                    <li><b>Duration : </b>2h 47m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> Mollywood Times</li>
+                    <li><strong>Genre:</strong> Dark Comedy, Drama</li>
+                    <li><strong>Rating:</strong> ⭐ 7.1/10</li>
+                    <li><strong>Director:</strong> Abhinav Sunder Nayak</li>
+                    <li><strong>Duration:</strong> 2h 47m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-            <!-- 08 -->
-            <td>
-                <a href="./Blast.html" target="_blank"><img src="https://image.tmdb.org/t/p/w500/ho824aZtnBzE6FuJRn2znQCq4qQ.jpg"
-                        alt="Blast Poster" height="300px" width="200px"></a>
+        <!-- Movie Card 08 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./Blast.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w500/ho824aZtnBzE6FuJRn2znQCq4qQ.jpg" alt="Blast Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> Blast</li>
-                    <li><b>Genre : </b> Action, Thriller</li>
-                    <li><b>Rating : </b> ⭐7.4/10</li>
-                    <li><b>Director : </b> Subash K. Raj</li>
-                    <li><b>Duration : </b>2h 20m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> Blast</li>
+                    <li><strong>Genre:</strong> Action, Thriller</li>
+                    <li><strong>Rating:</strong> ⭐ 7.4/10</li>
+                    <li><strong>Director:</strong> Subash K. Raj</li>
+                    <li><strong>Duration:</strong> 2h 20m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-            <!-- 09 -->
-
-            <td>
-                <a href="./Gatta Kusthi 2.html" target="_blank"><img
-                        src="https://image.tmdb.org/t/p/w500/bfHayll1X38UBYYdkgubbkMYLOl.jpg"
-                        alt="Gatta Kusthi 2 Poster" height="300px" width="200px"></a>
+        <!-- Movie Card 09 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./Gatta Kusthi 2.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w500/bfHayll1X38UBYYdkgubbkMYLOl.jpg" alt="Gatta Kusthi 2 Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> Gatta Kusthi 2</li>
-                    <li><b>Genre : </b> Comedy, Sports, Drama</li>
-                    <li><b>Rating : </b> ⭐6.5/10</li>
-                    <li><b>Director : </b> Chella Ayyavu</li>
-                    <li><b>Duration : </b>2h 34m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> Gatta Kusthi 2</li>
+                    <li><strong>Genre:</strong> Comedy, Sports, Drama</li>
+                    <li><strong>Rating:</strong> ⭐ 6.5/10</li>
+                    <li><strong>Director:</strong> Chella Ayyavu</li>
+                    <li><strong>Duration:</strong> 2h 34m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-
-            <!-- 10 -->
-            <td>
-                <a href="./Jana Nayagan.html" target="_blank"><img
-                        src="https://image.tmdb.org/t/p/w500/jtfrShq7YSjIObA20eWxmgXb9TP.jpg" alt="Jana Nayagan Poster"
-                        height="300px" width="200px"></a>
+        <!-- Movie Card 10 -->
+        <div class="movie-card">
+            <div class="poster-wrapper">
+                <a href="./Jana Nayagan.html" target="_blank">
+                    <img src="https://image.tmdb.org/t/p/w500/jtfrShq7YSjIObA20eWxmgXb9TP.jpg" alt="Jana Nayagan Poster">
+                </a>
+            </div>
+            <div class="movie-info">
                 <ul>
-                    <li><b>Name :-</b> Jana Nayagan</li>
-                    <li><b>Genre : </b> Action, Drama</li>
-                    <li><b>Rating : </b> ⭐7.2/10</li>
-                    <li><b>Director : </b> H. Vinoth</li>
-                    <li><b>Duration : </b>3h 03m</li>
+                    <li class="movie-title-item"><strong>Name:</strong> Jana Nayagan</li>
+                    <li><strong>Genre:</strong> Action, Drama</li>
+                    <li><strong>Rating:</strong> ⭐ 7.2/10</li>
+                    <li><strong>Director:</strong> H. Vinoth</li>
+                    <li><strong>Duration:</strong> 3h 03m</li>
                 </ul>
-            </td>
+            </div>
+        </div>
 
-        </tr>
-    </table>
+    </main>
 
+    <!-- Footer -->
     <footer>
         <h2>🎬 MOVIE DESCRIPTION</h2>
         <p>Explore. Discover. Enjoy Movies.</p>
