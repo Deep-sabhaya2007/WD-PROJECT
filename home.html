@@ -1,544 +1,449 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CineVerse - Home</title>
-    <style>
-        /* Base Reset & Fonts */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+   <link rel="stylesheet" href="./home.css">
+  </head>
 
-        body {
-            background-color: #0b0b0b;
-            color: #ffffff;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #121826;
-            padding: 15px 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover
-         {
-            color: rgb(228, 30, 30);
-        }
-
-        /* Header Title */
-        .page-title {
-            text-align: center;
-            color: rgb(228, 30, 30);
-            margin-bottom: 30px;
-            font-size: 28px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Movie Grid Layout */
-        .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 25px;
-            max-width: 1300px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        /* Movie Cards */
-        .movie-card {
-            background-color: #121826;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #1e293b;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .movie-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 20px rgba(228, 30, 30, 0.2);
-        }
-
-        .poster-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 150%; /* 2:3 aspect ratio */
-            overflow: hidden;
-        }
-
-        .poster-wrapper img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .movie-card:hover .poster-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .movie-info {
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            flex-grow: 1;
-        }
-
-        .movie-info ul {
-            list-style: none;
-            font-size: 14px;
-            color: #cbd5e1;
-        }
-
-        .movie-info li {
-            margin-bottom: 6px;
-            line-height: 1.4;
-        }
-
-        .movie-info b {
-            color: #ffffff;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            padding-bottom: 20px;
-            text-align: center;
-            color: #a0aec0;
-            font-size: 14px;
-            border-top: 1px solid #1e293b;
-        }
-
-        footer h2 {
-            font-size: 18px;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        footer p {
-            margin-bottom: 6px;
-        }
-
-        .footer-btn-container {
-            margin-top: 15px;
-            max-width: 200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 10px 20px;
-            background-color: rgb(228, 30, 30);
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: rgb(190, 20, 20);
-        }
-
-        .submit-btn:active {
-            transform: scale(0.98);
-        }
-    </style>
-</head>
-
-<body>
-
+  <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="./South movies/South movies.html" class="active">South Movies</a></li>
-            <li><a href="./webseries/webseries.html">Web Series</a></li>
-            <li><a href="./feedback.html">Feedback</a></li>
-        </ul>
+      <ul class="nav-links">
+        <li>
+          <a href="./South movies/South movies.html" class="active"
+            >South Movies</a
+          >
+        </li>
+        <li><a href="./webseries/webseries.html">Web Series</a></li>
+        <li><a href="./feedback.html">Feedback</a></li>
+      </ul>
     </nav>
 
     <!-- Header Section -->
     <header class="page-title">
-        <h2>🎥 MOVIES</h2>
+      <h2>🎥 MOVIES</h2>
     </header>
 
     <!-- Movie List Grid -->
     <main class="movie-grid">
-
-        <!-- Movie 01 -->
-        <div class="movie-card">
-            <a href="./dc.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/nmQ799Pa5EKczJvQPzlvhtW0CBW.jpg" alt="DC: The Bloody Valentine">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> DC: The Bloody Valentine</li>
-                    <li><b>Genre:</b> Action | Drama | Romance | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 9.1</li>
-                    <li><b>Director:</b> Arun Matheswaran</li>
-                    <li><b>Duration:</b> 2h 30m</li>
-                </ul>
-            </div>
+      <!-- Movie 01 -->
+      <div class="movie-card">
+        <a href="./dc.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://image.tmdb.org/t/p/w500/nmQ799Pa5EKczJvQPzlvhtW0CBW.jpg"
+            alt="DC: The Bloody Valentine"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> DC: The Bloody Valentine</li>
+            <li><b>Genre:</b> Action | Drama | Romance | Thriller</li>
+            <li><b>Rating:</b> ⭐ 9.1</li>
+            <li><b>Director:</b> Arun Matheswaran</li>
+            <li><b>Duration:</b> 2h 30m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 02 -->
-        <div class="movie-card">
-            <a href="./Interstellar.html" target="_blank" class="poster-wrapper">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN6MBU9VxzNxqU0gzzOsgDR0Mpxn4_6BDHIzD-Xc8YaQ&s=10" alt="Interstellar">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Interstellar</li>
-                    <li><b>Genre:</b> Adventure | Drama | Sci-Fi</li>
-                    <li><b>Rating:</b> ⭐ 8.7</li>
-                    <li><b>Director:</b> Christopher Nolan</li>
-                    <li><b>Duration:</b> 2h 49m</li>
-                </ul>
-            </div>
+      <!-- Movie 02 -->
+      <div class="movie-card">
+        <a href="./Interstellar.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN6MBU9VxzNxqU0gzzOsgDR0Mpxn4_6BDHIzD-Xc8YaQ&s=10"
+            alt="Interstellar"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Interstellar</li>
+            <li><b>Genre:</b> Adventure | Drama | Sci-Fi</li>
+            <li><b>Rating:</b> ⭐ 8.7</li>
+            <li><b>Director:</b> Christopher Nolan</li>
+            <li><b>Duration:</b> 2h 49m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 03 -->
-        <div class="movie-card">
-            <a href="./Avengers Infinity War.html" target="_blank" class="poster-wrapper">
-                <img src="https://imgshare.info/images/2025/05/01/Avengers.Infinity.War.2018.jpg" alt="Avengers Infinity War">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Avengers Infinity War</li>
-                    <li><b>Genre:</b> Action | Adventure</li>
-                    <li><b>Rating:</b> ⭐ 8.4</li>
-                    <li><b>Director:</b> Anthony Russo, Joe Russo</li>
-                    <li><b>Duration:</b> 2h 29m</li>
-                </ul>
-            </div>
+      <!-- Movie 03 -->
+      <div class="movie-card">
+        <a
+          href="./Avengers Infinity War.html"
+          target="_blank"
+          class="poster-wrapper"
+        >
+          <img
+            src="https://imgshare.info/images/2025/05/01/Avengers.Infinity.War.2018.jpg"
+            alt="Avengers Infinity War"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Avengers Infinity War</li>
+            <li><b>Genre:</b> Action | Adventure</li>
+            <li><b>Rating:</b> ⭐ 8.4</li>
+            <li><b>Director:</b> Anthony Russo, Joe Russo</li>
+            <li><b>Duration:</b> 2h 29m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 04 -->
-        <div class="movie-card">
-            <a href="./Avengers Endgame.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w400/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg" alt="Avengers: Endgame">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Avengers: Endgame</li>
-                    <li><b>Genre:</b> Adventure | Action</li>
-                    <li><b>Rating:</b> ⭐ 8.2</li>
-                    <li><b>Director:</b> Anthony Russo, Joe Russo</li>
-                    <li><b>Duration:</b> 3h 01m</li>
-                </ul>
-            </div>
+      <!-- Movie 04 -->
+      <div class="movie-card">
+        <a
+          href="./Avengers Endgame.html"
+          target="_blank"
+          class="poster-wrapper"
+        >
+          <img
+            src="https://image.tmdb.org/t/p/w400/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg"
+            alt="Avengers: Endgame"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Avengers: Endgame</li>
+            <li><b>Genre:</b> Adventure | Action</li>
+            <li><b>Rating:</b> ⭐ 8.2</li>
+            <li><b>Director:</b> Anthony Russo, Joe Russo</li>
+            <li><b>Duration:</b> 3h 01m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 05 -->
-        <div class="movie-card">
-            <a href="./Spider-Man Brand New Day.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/lcU1IHJ3K14HKLpGQnvdlt7tpQQ.jpg" alt="Spider-Man: Brand New Day">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Spider-Man: Brand New Day</li>
-                    <li><b>Genre:</b> Adventure | Action</li>
-                    <li><b>Rating:</b> ⭐ 8.2</li>
-                    <li><b>Director:</b> Destin Daniel Cretton</li>
-                    <li><b>Duration:</b> 2h 25m</li>
-                </ul>
-            </div>
+      <!-- Movie 05 -->
+      <div class="movie-card">
+        <a
+          href="./Spider-Man Brand New Day.html"
+          target="_blank"
+          class="poster-wrapper"
+        >
+          <img
+            src="https://image.tmdb.org/t/p/w500/lcU1IHJ3K14HKLpGQnvdlt7tpQQ.jpg"
+            alt="Spider-Man: Brand New Day"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Spider-Man: Brand New Day</li>
+            <li><b>Genre:</b> Adventure | Action</li>
+            <li><b>Rating:</b> ⭐ 8.2</li>
+            <li><b>Director:</b> Destin Daniel Cretton</li>
+            <li><b>Duration:</b> 2h 25m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 06 -->
-        <div class="movie-card">
-            <a href="./Dhurandhar.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/5zry3hg1bXsIbclnHKOWo9sa9Kz.jpg" alt="Dhurandhar">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Dhurandhar</li>
-                    <li><b>Genre:</b> Action | Crime | Drama | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 8.5</li>
-                    <li><b>Director:</b> Aditya Dhar</li>
-                    <li><b>Duration:</b> 3h 34m</li>
-                </ul>
-            </div>
+      <!-- Movie 06 -->
+      <div class="movie-card">
+        <a href="./Dhurandhar.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://image.tmdb.org/t/p/w500/5zry3hg1bXsIbclnHKOWo9sa9Kz.jpg"
+            alt="Dhurandhar"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Dhurandhar</li>
+            <li><b>Genre:</b> Action | Crime | Drama | Thriller</li>
+            <li><b>Rating:</b> ⭐ 8.5</li>
+            <li><b>Director:</b> Aditya Dhar</li>
+            <li><b>Duration:</b> 3h 34m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 07 -->
-        <div class="movie-card">
-            <a href="./Dhurandhar The Revenge.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/qij4kD9zQXiEByqwBuHOjWwPgCz.jpg" alt="Dhurandhar: The Revenge">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Dhurandhar: The Revenge</li>
-                    <li><b>Genre:</b> Action | Crime</li>
-                    <li><b>Rating:</b> ⭐ 8.2</li>
-                    <li><b>Director:</b> Aditya Dhar</li>
-                    <li><b>Duration:</b> 3h 49m</li>
-                </ul>
-            </div>
+      <!-- Movie 07 -->
+      <div class="movie-card">
+        <a
+          href="./Dhurandhar The Revenge.html"
+          target="_blank"
+          class="poster-wrapper"
+        >
+          <img
+            src="https://image.tmdb.org/t/p/w500/qij4kD9zQXiEByqwBuHOjWwPgCz.jpg"
+            alt="Dhurandhar: The Revenge"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Dhurandhar: The Revenge</li>
+            <li><b>Genre:</b> Action | Crime</li>
+            <li><b>Rating:</b> ⭐ 8.2</li>
+            <li><b>Director:</b> Aditya Dhar</li>
+            <li><b>Duration:</b> 3h 49m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 08 -->
-        <div class="movie-card">
-            <a href="./Eleven.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/lfwUc3JT5hG6vivAquLi0CG6Sgk.jpg" alt="Eleven">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Eleven</li>
-                    <li><b>Genre:</b> Crime | Mystery | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 8.0</li>
-                    <li><b>Director:</b> Lokkesh Ajls</li>
-                    <li><b>Duration:</b> 2h 25m</li>
-                </ul>
-            </div>
+      <!-- Movie 08 -->
+      <div class="movie-card">
+        <a href="./Eleven.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://image.tmdb.org/t/p/w500/lfwUc3JT5hG6vivAquLi0CG6Sgk.jpg"
+            alt="Eleven"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Eleven</li>
+            <li><b>Genre:</b> Crime | Mystery | Thriller</li>
+            <li><b>Rating:</b> ⭐ 8.0</li>
+            <li><b>Director:</b> Lokkesh Ajls</li>
+            <li><b>Duration:</b> 2h 25m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 09 -->
-        <div class="movie-card">
-            <a href="./M4M Motive for Murder.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/FcoRfDLRwiAcNCd5SmeDIIeea7.jpg" alt="M4M: Motive for Murder">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> M4M</li>
-                    <li><b>Genre:</b> Crime | Mystery</li>
-                    <li><b>Rating:</b> ⭐ 7.8</li>
-                    <li><b>Director:</b> Mohan Vadlapatla</li>
-                    <li><b>Duration:</b> 1h 37m</li>
-                </ul>
-            </div>
+      <!-- Movie 09 -->
+      <div class="movie-card">
+        <a
+          href="./M4M Motive for Murder.html"
+          target="_blank"
+          class="poster-wrapper"
+        >
+          <img
+            src="https://image.tmdb.org/t/p/w500/FcoRfDLRwiAcNCd5SmeDIIeea7.jpg"
+            alt="M4M: Motive for Murder"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> M4M</li>
+            <li><b>Genre:</b> Crime | Mystery</li>
+            <li><b>Rating:</b> ⭐ 7.8</li>
+            <li><b>Director:</b> Mohan Vadlapatla</li>
+            <li><b>Duration:</b> 1h 37m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 10 -->
-        <div class="movie-card">
-            <a href="./Aaryan.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/rRjh3zumdW89fNMe4tdjmALB1xG.jpg" alt="Aaryan">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Aaryan</li>
-                    <li><b>Genre:</b> Action | Crime | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 7.1</li>
-                    <li><b>Director:</b> Praveen K.</li>
-                    <li><b>Duration:</b> 2h 14m</li>
-                </ul>
-            </div>
+      <!-- Movie 10 -->
+      <div class="movie-card">
+        <a href="./Aaryan.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://image.tmdb.org/t/p/w500/rRjh3zumdW89fNMe4tdjmALB1xG.jpg"
+            alt="Aaryan"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Aaryan</li>
+            <li><b>Genre:</b> Action | Crime | Thriller</li>
+            <li><b>Rating:</b> ⭐ 7.1</li>
+            <li><b>Director:</b> Praveen K.</li>
+            <li><b>Duration:</b> 2h 14m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 11 -->
-        <div class="movie-card">
-            <a href="./Maargan.html" target="_blank" class="poster-wrapper">
-                <img src="https://catimages.co/images/2025/08/16/Maargan-2025-Hindi-Dubbed-Full-Movie-HDHub4u.Ms.jpg" alt="Maargan">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Maargan</li>
-                    <li><b>Genre:</b> Crime | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 6.9</li>
-                    <li><b>Director:</b> Leo John Paul</li>
-                    <li><b>Duration:</b> 2h 12m</li>
-                </ul>
-            </div>
+      <!-- Movie 11 -->
+      <div class="movie-card">
+        <a href="./Maargan.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://catimages.co/images/2025/08/16/Maargan-2025-Hindi-Dubbed-Full-Movie-HDHub4u.Ms.jpg"
+            alt="Maargan"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Maargan</li>
+            <li><b>Genre:</b> Crime | Thriller</li>
+            <li><b>Rating:</b> ⭐ 6.9</li>
+            <li><b>Director:</b> Leo John Paul</li>
+            <li><b>Duration:</b> 2h 12m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 12 -->
-        <div class="movie-card">
-            <a href="./LEO.html" target="_blank" class="poster-wrapper">
-                <img src="https://upload.wikimedia.org/wikipedia/en/7/75/Leo_%282023_Indian_film%29.jpg" alt="Leo">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> LEO</li>
-                    <li><b>Genre:</b> Crime | Drama</li>
-                    <li><b>Rating:</b> ⭐ 8.5</li>
-                    <li><b>Director:</b> Lokesh Kanagaraj</li>
-                    <li><b>Duration:</b> 2h 44m</li>
-                </ul>
-            </div>
+      <!-- Movie 12 -->
+      <div class="movie-card">
+        <a href="./LEO.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/7/75/Leo_%282023_Indian_film%29.jpg"
+            alt="Leo"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> LEO</li>
+            <li><b>Genre:</b> Crime | Drama</li>
+            <li><b>Rating:</b> ⭐ 8.5</li>
+            <li><b>Director:</b> Lokesh Kanagaraj</li>
+            <li><b>Duration:</b> 2h 44m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 13 -->
-        <div class="movie-card">
-            <a href="./Kaithi.html" target="_blank" class="poster-wrapper">
-                <img src="https://imgshare.info/images/2026/07/19/Kaithi-2019.jpg" alt="Kaithi">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Kaithi</li>
-                    <li><b>Genre:</b> Action | Crime</li>
-                    <li><b>Rating:</b> ⭐ 8.4</li>
-                    <li><b>Director:</b> Harish Shankar</li>
-                    <li><b>Duration:</b> 2h 26m</li>
-                </ul>
-            </div>
+      <!-- Movie 13 -->
+      <div class="movie-card">
+        <a href="./Kaithi.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://imgshare.info/images/2026/07/19/Kaithi-2019.jpg"
+            alt="Kaithi"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Kaithi</li>
+            <li><b>Genre:</b> Action | Crime</li>
+            <li><b>Rating:</b> ⭐ 8.4</li>
+            <li><b>Director:</b> Harish Shankar</li>
+            <li><b>Duration:</b> 2h 26m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 14 -->
-        <div class="movie-card">
-            <a href="./Master.html" target="_blank" class="poster-wrapper">
-                <img src="https://myimg.click/images/2021/03/14/Master-Hindi-Poster-HDHub4u.jpg" alt="Master">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Master</li>
-                    <li><b>Genre:</b> Drama | Crime</li>
-                    <li><b>Rating:</b> ⭐ 7.6</li>
-                    <li><b>Director:</b> Lokesh Kanagaraj</li>
-                    <li><b>Duration:</b> 2h 49m</li>
-                </ul>
-            </div>
+      <!-- Movie 14 -->
+      <div class="movie-card">
+        <a href="./Master.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://myimg.click/images/2021/03/14/Master-Hindi-Poster-HDHub4u.jpg"
+            alt="Master"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Master</li>
+            <li><b>Genre:</b> Drama | Crime</li>
+            <li><b>Rating:</b> ⭐ 7.6</li>
+            <li><b>Director:</b> Lokesh Kanagaraj</li>
+            <li><b>Duration:</b> 2h 49m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 15 -->
-        <div class="movie-card">
-            <a href="./Beast.html" target="_blank" class="poster-wrapper">
-                <img src="https://myimg.click/images/2022/05/11/Beast-2022-Hindi-HDRip-Full-Movie-HDHub4u.jpg" alt="Beast">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Beast</li>
-                    <li><b>Genre:</b> Crime | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 7.6</li>
-                    <li><b>Director:</b> Nelson Dilipkumar</li>
-                    <li><b>Duration:</b> 2h 36m</li>
-                </ul>
-            </div>
+      <!-- Movie 15 -->
+      <div class="movie-card">
+        <a href="./Beast.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://myimg.click/images/2022/05/11/Beast-2022-Hindi-HDRip-Full-Movie-HDHub4u.jpg"
+            alt="Beast"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Beast</li>
+            <li><b>Genre:</b> Crime | Thriller</li>
+            <li><b>Rating:</b> ⭐ 7.6</li>
+            <li><b>Director:</b> Nelson Dilipkumar</li>
+            <li><b>Duration:</b> 2h 36m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 16 -->
-        <div class="movie-card">
-            <a href="./Mirzapur_The Movie.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/duaKd6Hx13P633GCmF9njjG0DfA.jpg" alt="Mirzapur: The Movie">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Mirzapur</li>
-                    <li><b>Genre:</b> Crime | Drama | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 9.0</li>
-                    <li><b>Director:</b> Gurmmeet Singh</li>
-                    <li><b>Duration:</b> 3h 17m</li>
-                </ul>
-            </div>
+      <!-- Movie 16 -->
+      <div class="movie-card">
+        <a
+          href="./Mirzapur_The Movie.html"
+          target="_blank"
+          class="poster-wrapper"
+        >
+          <img
+            src="https://image.tmdb.org/t/p/w500/duaKd6Hx13P633GCmF9njjG0DfA.jpg"
+            alt="Mirzapur: The Movie"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Mirzapur</li>
+            <li><b>Genre:</b> Crime | Drama | Thriller</li>
+            <li><b>Rating:</b> ⭐ 9.0</li>
+            <li><b>Director:</b> Gurmmeet Singh</li>
+            <li><b>Duration:</b> 3h 17m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 17 -->
-        <div class="movie-card">
-            <a href="./Dhamaal 4.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/9SoUSLwXuJItGd4KJekfGu9ItfU.jpg" alt="Dhamaal 4">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Dhamaal 4</li>
-                    <li><b>Genre:</b> Action | Adventure | Comedy</li>
-                    <li><b>Rating:</b> ⭐ 8.1</li>
-                    <li><b>Director:</b> Indra Kumar</li>
-                    <li><b>Duration:</b> 2h 23m</li>
-                </ul>
-            </div>
+      <!-- Movie 17 -->
+      <div class="movie-card">
+        <a href="./Dhamaal 4.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://image.tmdb.org/t/p/w500/9SoUSLwXuJItGd4KJekfGu9ItfU.jpg"
+            alt="Dhamaal 4"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Dhamaal 4</li>
+            <li><b>Genre:</b> Action | Adventure | Comedy</li>
+            <li><b>Rating:</b> ⭐ 8.1</li>
+            <li><b>Director:</b> Indra Kumar</li>
+            <li><b>Duration:</b> 2h 23m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 18 -->
-        <div class="movie-card">
-            <a href="./Toxic.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w500/hSBE52IVDp6Pf6RWTSUOx6bX5kl.jpg" alt="Toxic">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> Toxic</li>
-                    <li><b>Genre:</b> Action | Crime | Drama | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 8.1</li>
-                    <li><b>Director:</b> Geethu Mohandas</li>
-                    <li><b>Duration:</b> 3h 14m</li>
-                </ul>
-            </div>
+      <!-- Movie 18 -->
+      <div class="movie-card">
+        <a href="./Toxic.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://image.tmdb.org/t/p/w500/hSBE52IVDp6Pf6RWTSUOx6bX5kl.jpg"
+            alt="Toxic"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> Toxic</li>
+            <li><b>Genre:</b> Action | Crime | Drama | Thriller</li>
+            <li><b>Rating:</b> ⭐ 8.1</li>
+            <li><b>Director:</b> Geethu Mohandas</li>
+            <li><b>Duration:</b> 3h 14m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 19 -->
-        <div class="movie-card">
-            <a href="./KGF Chapter 1.html" target="_blank" class="poster-wrapper">
-                <img src="https://image.tmdb.org/t/p/w400/ltHlJwvxKv7d0ooCiKSAvfwV9tX.jpg" alt="K.G.F: Chapter 1">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> K.G.F: Ch. 1</li>
-                    <li><b>Genre:</b> Action | Drama | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 8.5</li>
-                    <li><b>Director:</b> Prashanth Neel</li>
-                    <li><b>Duration:</b> 2h 24m</li>
-                </ul>
-            </div>
+      <!-- Movie 19 -->
+      <div class="movie-card">
+        <a href="./KGF Chapter 1.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://image.tmdb.org/t/p/w400/ltHlJwvxKv7d0ooCiKSAvfwV9tX.jpg"
+            alt="K.G.F: Chapter 1"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> K.G.F: Ch. 1</li>
+            <li><b>Genre:</b> Action | Drama | Thriller</li>
+            <li><b>Rating:</b> ⭐ 8.5</li>
+            <li><b>Director:</b> Prashanth Neel</li>
+            <li><b>Duration:</b> 2h 24m</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Movie 20 -->
-        <div class="movie-card">
-            <a href="./KGF Chapter 2.html" target="_blank" class="poster-wrapper">
-                <img src="https://myimg.click/images/2022/05/16/KGF-CHAPTER-2-2022-Hindi-ORG-WEBRip-Full-Movie.jpg" alt="K.G.F: Chapter 2">
-            </a>
-            <div class="movie-info">
-                <ul>
-                    <li><b>Name:</b> K.G.F: Ch. 2</li>
-                    <li><b>Genre:</b> Action | Drama | Thriller</li>
-                    <li><b>Rating:</b> ⭐ 8.9</li>
-                    <li><b>Director:</b> Prashanth Neel</li>
-                    <li><b>Duration:</b> 2h 48m</li>
-                </ul>
-            </div>
+      <!-- Movie 20 -->
+      <div class="movie-card">
+        <a href="./KGF Chapter 2.html" target="_blank" class="poster-wrapper">
+          <img
+            src="https://myimg.click/images/2022/05/16/KGF-CHAPTER-2-2022-Hindi-ORG-WEBRip-Full-Movie.jpg"
+            alt="K.G.F: Chapter 2"
+          />
+        </a>
+        <div class="movie-info">
+          <ul>
+            <li><b>Name:</b> K.G.F: Ch. 2</li>
+            <li><b>Genre:</b> Action | Drama | Thriller</li>
+            <li><b>Rating:</b> ⭐ 8.9</li>
+            <li><b>Director:</b> Prashanth Neel</li>
+            <li><b>Duration:</b> 2h 48m</li>
+          </ul>
         </div>
-
+      </div>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <h2>🎬 MOVIE DESCRIPTION</h2>
-        <p>Explore. Discover. Enjoy Movies.</p>
-        <p>© 2026 CineVerse | Movie Information Website</p>
+      <h2>🎬 MOVIE DESCRIPTION</h2>
+      <p>Explore. Discover. Enjoy Movies.</p>
+      <p>© 2026 CineVerse | Movie Information Website</p>
 
-        <div class="footer-btn-container">
-            <a href="./feedback.html">
-                <button type="button" class="submit-btn">Feedback</button>
-                
-            </a>
-        </div>
+      <div class="footer-btn-container">
+        <a href="./feedback.html">
+          <button type="button" class="submit-btn">Feedback</button>
+        </a>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>
