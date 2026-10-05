@@ -1,4 +1,4 @@
-* {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -38,22 +38,54 @@
             margin-bottom: 12px;
         }
 
+
         nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
             font-size: 14px;
         }
 
         nav a {
+            position: relative;
             color: #38bdf8;
             text-decoration: none;
-            margin: 0 8px;
+            padding: 8px 14px;
+            border-radius: 6px;
             font-weight: 500;
-            transition: color 0.2s ease;
+
+            /* Smooth transition */
+            transition:
+                color 0.3s ease,
+                background-color 0.3s ease,
+                transform 0.3s ease;
         }
 
+        /* Hover effect */
         nav a:hover {
-            color: #7dd3fc;
-            text-decoration: underline;
+            color: #ffffff;
+            background-color: #4f46e5;
+            transform: translateY(-3px);
         }
+
+        /* Animated underline */
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 3px;
+            width: 0;
+            height: 2px;
+            background-color: #ffffff;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        /* Underline appears on hover */
+        nav a:hover::after {
+            width: 70%;
+        }
+
 
         /* Section Title */
         .section-title {
