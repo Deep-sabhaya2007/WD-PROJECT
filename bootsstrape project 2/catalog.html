@@ -11,21 +11,82 @@
     body {
         margin: 0;
         background: #000;
-        
         color: white;
         font-family: Arial, sans-serif;
-        background: 
-        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),url(./MovieMania\ Cinematic\ Premiere\ Banner.png);
-
     }
 
-   
 
-  
+    .hero {
+        min-height: 100vh;
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+            url("./MovieMania\ Cinematic\ Premiere\ Banner.png") center/cover no-repeat;
+    }
+
+    .logo {
+        color: #e50914;
+        font-size: 42px;
+        font-weight: 900;
+        letter-spacing: -2px;
+    }
+
+    .btn-netflix {
+        color: white;
+        border: none;
+        font-weight: bold;
+    }
+
+
+
+    .hero-content {
+        min-height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        min-height: 100vh;
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+            url("./MovieMania\ Cinematic\ Premiere\ Banner.png") center/cover no-repeat;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.3rem, 5vw, 4rem);
+        font-weight: 800;
+    }
+
+    @media (max-width: 576px) {
+        .logo {
+            font-size: 30px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.2rem;
+        }
+    }
 </style>
 
 <body>
+    <section class="hero-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
 
+                    <h1 class="display-1">WELCOME<br>TO <br> MovieMania</h1>
+                    
+                    <div class="col-12 col-md-auto">
+                        <a href="./home.html"> <button type="submit" class="btn btn-netflix btn-lg px-4 w-100">
+                                Get Started ❯
+                            </button></a>
+                    </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 
