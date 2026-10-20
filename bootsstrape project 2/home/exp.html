@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MovieMania</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1f1f1f !important;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+        .navbar-toggler {
+            background-color: #ddd;
+        }
+
+        /* Movie section */
+        .movie-section {
+            padding: 30px 0;
+        }
+
+        .movie-card {
+            background-color: #1e1e1e;
+            color: white;
+            border: 1px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .movie-card .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-card .btn {
+            margin-top: auto;
+        }
+
+        .section-title {
+            color: #ffc107;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f1f1f;
+            color: #bbb;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                <img src="./video-editing-app.png"
+                    alt="Logo" width="30" height="30"
+                    class="d-inline-block align-text-middle">
+                MovieMania
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Catalog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Web Series</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">South Movies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hollywood</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bollywood</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Movie Cards Section -->
+    <div class="container movie-section">
+
+        <h2 class="section-title text-center">Explore Movies</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+            <!-- Movie 1 -->
+            <div class="col">
+                <div class="card movie-card">
+                    <img src="https://placehold.co/400x550/252525/ffffff?text=Movie+1"
+                        class="card-img-top" alt="Movie 1 poster">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 1</h5>
+                        <p class="card-text">
+                            Discover an exciting story full of adventure and action.
+                        </p>
+                        <a href="#" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 2 -->
+            <div class="col">
+                <div class="card movie-card">
+                    <img src="https://placehold.co/400x550/252525/ffffff?text=Movie+2"
+                        class="card-img-top" alt="Movie 2 poster">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 2</h5>
+                        <p class="card-text">
+                            Enjoy a fantastic movie with an unforgettable storyline.
+                        </p>
+                        <a href="#" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 3 -->
+            <div class="col">
+                <div class="card movie-card">
+                    <img src="https://placehold.co/400x550/252525/ffffff?text=Movie+3"
+                        class="card-img-top" alt="Movie 3 poster">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 3</h5>
+                        <p class="card-text">
+                            Experience suspense, drama and thrilling moments.
+                        </p>
+                        <a href="#" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 4 -->
+            <div class="col">
+                <div class="card movie-card">
+                    <img src="https://placehold.co/400x550/252525/ffffff?text=Movie+4"
+                        class="card-img-top" alt="Movie 4 poster">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 4</h5>
+                        <p class="card-text">
+                            Explore a wonderful cinematic experience.
+                        </p>
+                        <a href="#" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 5 -->
+            <div class="col">
+                <div class="card movie-card">
+                    <img src="https://placehold.co/400x550/252525/ffffff?text=Movie+5"
+                        class="card-img-top" alt="Movie 5 poster">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 5</h5>
+                        <p class="card-text">
+                            Watch an entertaining film filled with surprises.
+                        </p>
+                        <a href="#" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 6 -->
+            <div class="col">
+                <div class="card movie-card">
+                    <img src="https://placehold.co/400x550/252525/ffffff?text=Movie+6"
+                        class="card-img-top" alt="Movie 6 poster">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 6</h5>
+                        <p class="card-text">
+                            Find your next favorite movie in our collection.
+                        </p>
+                        <a href="#" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 7 -->
+            <div class="col">
+                <div class="card movie-card">
+                    <img src="https://placehold.co/400x550/252525/ffffff?text=Movie+7"
+                        class="card-img-top" alt="Movie 7 poster">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 7</h5>
+                        <p class="card-text">
+                            Enjoy another great addition to your movie collection.
+                        </p>
+                        <a href="#" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 8 -->
+            <div class="col">
+                <div class="card movie-card">
+                    <img src="https://placehold.co/400x550/252525/ffffff?text=Movie+8"
+                        class="card-img-top" alt="Movie 8 poster">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 8</h5>
+                        <p class="card-text">
+                            Explore more movies and choose what to watch next.
+                        </p>
+                        <a href="#" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p class="mb-0">&copy; 2026 MovieMania. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
