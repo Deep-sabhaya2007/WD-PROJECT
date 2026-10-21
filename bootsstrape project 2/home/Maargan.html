@@ -4,67 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Description</title>
-    <link rel="stylesheet" href="./movie details.css">
+
+    <title>Maargan - Movie Description</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-dark text-light min-vh-100">
 
-    <header>
-        <h1>🎬 MOVIE DESCRIPTON</h1>
-        <p>Your Ultimate Movie Explorer</p>
-        <nav>
-            <a href="./home.html">Home</a>
+    <!-- Header -->
+    <header class="container text-center py-4 border-bottom border-secondary">
 
+        <h1 class="text-white mb-2">
+            🎬 MOVIE DESCRIPTION
+        </h1>
+
+        <p class="text-secondary">
+            Your Ultimate Movie Explorer
+        </p>
+
+        <!-- Navigation -->
+        <nav class="nav justify-content-center">
+            <a href="./home.html" class="nav-link text-info">
+                Home
+            </a>
         </nav>
+
     </header>
 
-    <div class="section-title">
-        ⭐ Featured Movie
-    </div>
+    <!-- Main Content -->
+    <main class="container my-4">
 
-    <div class="movie-card">
-        <div class="poster-container">
-            <img src="https://catimages.co/images/2025/08/16/Maargan-2025-Hindi-Dubbed-Full-Movie-HDHub4u.Ms.jpg" alt="Maargan">
+        <h2 class="text-center text-warning mb-4">
+            ⭐ Featured Movie
+        </h2>
+
+        <!-- Movie Card -->
+        <div class="card bg-black text-light border-secondary shadow-lg mx-auto overflow-hidden"
+            style="max-width: 850px;">
+
+            <div class="row g-0">
+
+                <!-- Movie Poster -->
+                <div class="col-md-5">
+
+                    <img
+                        src="https://catimages.co/images/2025/08/16/Maargan-2025-Hindi-Dubbed-Full-Movie-HDHub4u.Ms.jpg"
+                        alt="Maargan movie poster"
+                        class="img-fluid w-100 h-100"
+                        style="object-fit: cover; min-height: 350px;">
+
+                </div>
+
+                <!-- Movie Details -->
+                <div class="col-md-7">
+
+                    <div class="card-body p-4">
+
+                        <h2 class="card-title text-white mb-4">
+                            Maargan
+                        </h2>
+
+                        <p class="mb-3">
+                            <strong>Genre:</strong>
+                            <span class="text-secondary">
+                                Action | Crime | Drama | Thriller
+                            </span>
+                        </p>
+
+                        <p class="mb-3">
+                            <strong>Release Year:</strong>
+                            <span class="text-secondary">2025</span>
+                        </p>
+
+                        <p class="mb-3">
+                            <strong>Duration:</strong>
+                            <span class="text-secondary">2h 22min</span>
+                        </p>
+
+                        <p class="mb-3">
+                            <strong>Rating:</strong>
+                            <span class="text-warning">⭐ 7.5/10</span>
+                        </p>
+
+                        <p class="mb-3">
+                            <strong>Director:</strong>
+                            <span class="text-secondary">
+                                Leo John Paul
+                            </span>
+                        </p>
+
+                        <p class="text-secondary mb-4">
+                            <strong class="text-light">Story:</strong>
+                            A high-stakes investigative thriller following
+                            an unyielding law enforcement team as they
+                            navigate a dangerous web of deceit, political
+                            pressure, and criminal conspiracies to solve
+                            a complex case.
+                        </p>
+
+                        <!-- Trailer Button -->
+                        <a href="https://youtu.be/kdRysWU154k?si=l7S3YO75h69odFE3"
+                            class="btn btn-primary"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            ► Watch Trailer
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="movie-details">
-            <h2 class="movie-title">Maargan</h2>
+    </main>
 
-            <div class="info-item">
-                <strong>Genre:</strong> Action | Crime | Drama | Thriller
-            </div>
-            <div class="info-item">
-                <strong>Release Year:</strong> 2025
-            </div>
-            <div class="info-item">
-                <strong>Duration:</strong> 2h 22min
-            </div>
-            <div class="info-item">
-                <strong>Rating:</strong> ⭐ 7.5/10
-            </div>
-            <div class="info-item">
-                <strong>Director:</strong> Leo John Paul
-            </div>
-            <div class="info-item story">
-                <strong>Story:</strong> A high-stakes investigative thriller following an unyielding law enforcement team as they navigate a dangerous web of deceit, political pressure, and criminal conspiracies to solve a complex case.
-            </div>
+    <!-- Footer -->
+    <footer class="container text-center mt-5 py-4 border-top border-secondary">
 
-            <a href="https://youtu.be/kdRysWU154k?si=l7S3YO75h69odFE3" class="trailer-link" target="_blank">► Watch Trailer</a>
-        </div>
-    </div>
+        <h4 class="text-white">
+            🎬 MOVIE DESCRIPTION
+        </h4>
 
-    <footer>
-        <h2>🎬 MOVIE DESCRIPTON</h2>
-        <p>Explore. Discover. Enjoy Movies.</p>
-        <p>© 2026 CineVerse | Movie Information Website</p>
+        <p class="text-secondary mb-2">
+            Explore. Discover. Enjoy Movies.
+        </p>
 
-        <div>
-            <a href="./feedback.html">
-                <button type="button" class="submit-btn">Feedback</button>
-            </a>
-        </div>
+        <p class="text-secondary small">
+            © 2026 MovieMania | Movie Information Website
+        </p>
+
+        <a href="./feedback.html" class="btn btn-outline-light mt-2">
+            Feedback
+        </a>
+
     </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
