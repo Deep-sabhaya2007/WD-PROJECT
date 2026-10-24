@@ -9,12 +9,81 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <style>
-    /* .movie {
-        display: flex;
-    } */
-
     body {
         background-color: black;
+    }
+
+    /* Movie card hover effect */
+    .movie-card {
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        border: 1px solid #444;
+    }
+
+    .movie-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+        border-color: #ffc107;
+    }
+
+    /* Movie poster hover effect */
+    .movie-card .card-img-top {
+        height: 350px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .movie-card:hover .card-img-top {
+        transform: scale(1.08);
+    }
+
+    /* Card body styling */
+    .movie-card .card-body {
+        transition: background-color 0.3s ease;
+    }
+
+    .movie-card:hover .card-body {
+        background-color: #212529;
+        color: white;
+    }
+
+    /* Movie title hover effect */
+    .movie-card .card-title {
+        transition: color 0.3s ease;
+    }
+
+    .movie-card:hover .card-title {
+        color: #ffc107;
+    }
+
+    /* View Details button hover effect */
+    .movie-card .btn-warning {
+        transition: background-color 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .movie-card .btn-warning:hover {
+        background-color: #ffdb4d;
+        transform: scale(1.05);
+    }
+
+    /* Navbar link hover effect */
+    .navbar .nav-link {
+        transition: color 0.3s ease;
+    }
+
+    .navbar .nav-link:hover {
+        color: #ffc107 !important;
+    }
+
+    /* Logo and website name hover effect */
+    .navbar-brand {
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+        transform: scale(1.05);
     }
 </style>
 
