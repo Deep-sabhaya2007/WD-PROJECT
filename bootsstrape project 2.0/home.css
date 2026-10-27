@@ -17,7 +17,7 @@ body {
 /* Navigation Bar */
 .navbar {
   font-size: larger;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,15 +39,11 @@ body {
   font-size: 16px;
   font-weight: 500;
   transition: color 0.2s ease;
-
 }
 
 .nav-links a:hover {
   color: rgb(255, 255, 255);
 }
-
-
-
 
 nav {
   display: flex;
@@ -57,7 +53,7 @@ nav {
 }
 
 nav a {
-  font-family: cursive; 
+  font-family: cursive;
   position: relative;
   color: #38bdf8;
   text-decoration: none;
@@ -97,7 +93,6 @@ nav a:hover::after {
   width: 70%;
 }
 
-
 /* Header Title */
 .page-title {
   text-align: center;
@@ -136,7 +131,7 @@ nav a:hover::after {
   /* transform: translate(-6px); */
   transform: scale(1.03);
   /* box-shadow: 0 10px 20px rgba(30, 202, 228, 0.995); */
-   box-shadow: 0 1.5px 20px rgba(30, 202, 228, 0.995);
+  box-shadow: 0 1.5px 20px rgba(30, 202, 228, 0.995);
 }
 
 .poster-wrapper {
@@ -156,7 +151,6 @@ nav a:hover::after {
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-
 
 .movie-info {
   padding: 15px;
@@ -256,9 +250,47 @@ footer p {
   }
 }
 
-#link
-{
+#link {
   text-align: center;
   justify-content: center;
   display: flex;
+}
+
+/* Movie slider */
+.movie-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Moving track */
+.movie-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+
+  animation: scrollMovies 35s linear infinite;
+}
+
+/* Movie cards */
+.movie-card {
+  flex: 0 0 160px;
+  width: 160px;
+
+  transition: transform 0.3s ease;
+}
+
+.movie-card img {
+  width: 160px;
+  height: 220px;
+  object-fit: cover;
+}
+/* Infinite horizontal movement */
+@keyframes scrollMovies {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
 }
